@@ -8,8 +8,8 @@ RSpec.describe 'Users API', type: :request do
 
   describe 'GET /users/:id' do
     before do
-      headers = {'Accept' => 'application/vnd.taskmanager.v1'}
-      get "/api/users/#{user_id}", params: {}, headers: headers
+      headers = { Accept: 'application/vnd.taskmanager.v1' }
+      get "/users/#{user_id}", params: {}, headers: headers
     end
 
     context 'when the user exists' do
