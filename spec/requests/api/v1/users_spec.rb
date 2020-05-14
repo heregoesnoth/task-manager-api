@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Users API', type: :request do
-  let!(:user) { FactoryGirl.create(:user) }
+  let!(:user) { create(:user) }
   let(:user_id) { user.id }
   let(:headers) do
     {
@@ -44,7 +44,7 @@ RSpec.describe 'Users API', type: :request do
     end
 
     context 'when the request params are valid' do
-      let(:user_params) { FactoryGirl.attributes_for(:user) }
+      let(:user_params) { attributes_for(:user) }
 
       it 'returns status code 201' do
         expect(response).to have_http_status(201)
@@ -57,7 +57,7 @@ RSpec.describe 'Users API', type: :request do
     end
 
     context 'when the request params are invalid' do
-      let(:user_params) { FactoryGirl.attributes_for(:user, email: 'invalid_email@') }
+      let(:user_params) { attributes_for(:user, email: 'invalid_email@') }
 
       it 'returns status code 422' do
         expect(response).to have_http_status(422)
