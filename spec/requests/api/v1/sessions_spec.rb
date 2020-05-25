@@ -56,10 +56,6 @@ RSpec.describe 'Sessions API', type: :request do
     it "changes the user auth token" do
       expect( User.find_by(auth_token: auth_token) ).to be_nil
     end
-    
-
-
-  
   end
 
 end
