@@ -35,7 +35,7 @@ RSpec.describe 'Sessions API', type: :request do
         expect(response).to have_http_status(401)
       end
 
-      it 'returns the json data for the user with auth roken' do
+      it 'returns the json data for the user with auth token' do
         expect(json_body).to have_key(:errors)
       end
     end
