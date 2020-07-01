@@ -56,7 +56,7 @@ RSpec.configure do |config|
   end
 
   # Factory Girl config
-  config.include RequestSpecHelper, type: :request
+  config.include RequestSpecHelper
 
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
