@@ -17,8 +17,16 @@ class Api::V1::TasksController < ApplicationController
       render json: task, status: 201
     else
       render json: {errors: task}, status: 422
-
     end
+  end
+
+  def update
+    task = current_user.tasks.find(params[:id])
+    if task.update(task_params)
+      render json: task, status: 200
+    else
+      render json: {errors: task}, status: 422
+     end
   end
 
   private
